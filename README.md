@@ -49,24 +49,24 @@ uv run uvicorn tools.mcp_server:app --port 8001
 
 ```mermaid
 graph TD
-    Client[Client / Frontend] -->|HTTP POST| API[API Layer (FastAPI)]
+    Client["Client / Frontend"] -->|HTTP POST| API["API Layer (FastAPI)"]
     
     subgraph "Backend System"
-        API -->|Invoke| ChatSystem[Chat System (LangGraph)]
-        API -->|Upload| RAGSystem[RAG System]
+        API -->|Invoke| ChatSystem["Chat System (LangGraph)"]
+        API -->|Upload| RAGSystem["RAG System"]
         
         subgraph "Core Layer"
-            LLM[LLM Service]
-            MCP[MCP Manager]
-            Session[Session Manager]
+            LLM["LLM Service"]
+            MCP["MCP Manager"]
+            Session["Session Manager"]
         end
         
         ChatSystem -->|Use| LLM
         ChatSystem -->|Use| MCP
         ChatSystem -->|Use| RAGSystem
         
-        RAGSystem -->|Store/Query| VectorDB[(ChromaDB)]
-        MCP -->|Connect| ExternalTools[External MCP Servers]
+        RAGSystem -->|Store/Query| VectorDB[("VectorDB (ChromaDB)")]
+        MCP -->|Connect| ExternalTools["External MCP Servers"]
     end
 ```
 

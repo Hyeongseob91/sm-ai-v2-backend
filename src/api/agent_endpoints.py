@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
 from src.models.api_schema import ChatRequest, ChatResponse
-from src.systems.chat.graph import build_graph
+from src.systems.agent.build_graph import build_graph
 from langchain_core.messages import HumanMessage
 
 router = APIRouter()

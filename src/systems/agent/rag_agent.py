@@ -3,7 +3,7 @@ from langchain_core.messages import BaseMessage
 from langchain_core.runnables import RunnableConfig
 from langgraph.graph.message import add_messages
 from src.core.llm_service import LLMService
-from src.systems.agent.calling_tools import get_all_tools
+from src.systems.calling_tools import get_rag_tools
 
 class AgentState(TypedDict):
     messages: Annotated[Sequence[BaseMessage], add_messages]
@@ -15,7 +15,7 @@ async def call_model(state: AgentState, config: RunnableConfig):
     llm = LLMService.get_llm()
     
     # Bind Tools
-    tools = await get_all_tools()
+    tools = await get_rag_tools()
     llm_with_tools = llm.bind_tools(tools)
     
     # Invoke

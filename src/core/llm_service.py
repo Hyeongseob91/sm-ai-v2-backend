@@ -5,7 +5,7 @@ settings = get_settings()
 
 class LLMService:
     @staticmethod
-    def get_llm(model_name: str, temperature: float = 0.7):
+    def get_llm(model_name: str = "gpt-oss-120b", temperature: float = 0.7):
         """
         Get LLM instance
         """

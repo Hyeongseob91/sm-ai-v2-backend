@@ -1,7 +1,7 @@
 [project]
-name = "sm-ai-v2-back"
+name = "supervisor-multi-agent-system"
 version = "0.1.0"
-description = "Backend for SoundMind AI V2 - Multi-Modal Agentic System"
+description = "Supervisor-based Multi-Agent System: Server"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
@@ -24,6 +24,9 @@ dependencies = [
     "docx2txt>=0.8",
     "python-pptx>=0.6.21",
     "langgraph-supervisor>=0.0.1",
+    "sentence-transformers>=2.2.0",
+    "langchain-huggingface>=0.0.3",
+    "openpyxl>=3.1.0",
 ]
 
 

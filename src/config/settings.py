@@ -4,7 +4,7 @@ from typing import Optional
 
 class Settings(BaseSettings):
     # App
-    APP_NAME: str = "SoundMind AI V2"
+    APP_NAME: str = "Supervisor-based Multi-Agent System"
     DEBUG: bool = True
     
     # LLM
@@ -13,6 +13,10 @@ class Settings(BaseSettings):
     
     # Vector DB
     CHROMA_DB_PATH: str = "./chroma_db"
+
+    # Embedding
+    EMBEDDING_MODEL: str = "BAAI/bge-m3"
+    EMBEDDING_DEVICE: str = "cpu"  # GPU는 vLLM이 사용 중
     
     # MCP
     MCP_SERVER_URLS: list[str] = []  # List of external MCP server URLs

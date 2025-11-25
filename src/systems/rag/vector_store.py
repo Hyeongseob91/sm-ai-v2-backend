@@ -1,6 +1,6 @@
 import chromadb
 from chromadb.config import Settings as ChromaSettings
-from langchain_openai import OpenAIEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
 from src.config.settings import get_settings
 import os
@@ -20,9 +20,10 @@ class VectorStore:
         # Ensure directory exists
         os.makedirs(settings.CHROMA_DB_PATH, exist_ok=True)
         
-        self.embedding_function = OpenAIEmbeddings(
-            api_key=settings.OPENAI_API_KEY,
-            model="text-embedding-3-small"
+        self.embedding_function = HuggingFaceEmbeddings(
+            model_name=settings.EMBEDDING_MODEL,
+            model_kwargs={"device": settings.EMBEDDING_DEVICE},
+            encode_kwargs={"normalize_embeddings": True}
         )
         
         self.client = Chroma(

@@ -7,7 +7,10 @@ class SearchInput(BaseModel):
 
 class RAGTool(BaseTool):
     name: str = "search_knowledge_base"
-    description: str = "Use this tool to search for internal documents and knowledge. Always use this when asked about specific company policies, project details, or internal data."
+    description: str = """
+    Use this tool to search for internal documents and knowledge.
+    Always use this when asked about specific company policies,
+    project details or internal data."""
     args_schema: Type[BaseModel] = SearchInput
 
     def _run(self, query: str) -> str:

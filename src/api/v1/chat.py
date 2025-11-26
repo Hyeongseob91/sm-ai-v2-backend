@@ -17,7 +17,7 @@ async def send_message(request: ChatRequest, graph=Depends(get_graph)):
     """Multi-Agent 시스템에 메시지를 전송하고 응답을 받습니다.
 
     Args:
-        request: 채팅 요청 (message, session_id, model_name)
+        request: 채팅 요청 (message, session_id)
         graph: Multi-Agent 그래프 인스턴스 (의존성 주입)
 
     Returns:

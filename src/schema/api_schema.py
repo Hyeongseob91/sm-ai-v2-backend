@@ -10,7 +10,6 @@ class BaseResponse(BaseModel):
 class ChatRequest(BaseModel):
     message: str
     session_id: str
-    model_name: str = "gpt-oss-120b"
 
 class ChatResponse(BaseModel):
     response: str

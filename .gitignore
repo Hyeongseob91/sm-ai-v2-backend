@@ -18,6 +18,7 @@ ENV/
 # Local Data (RAG & Uploads)
 chroma_db/
 uploads/
+/data
 
 # Logs
 *.log

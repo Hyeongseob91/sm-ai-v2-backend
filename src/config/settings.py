@@ -29,6 +29,12 @@ class Settings(BaseSettings):
     ANTHROPIC_API_KEY: Optional[str] = None
 
     # ==========================================================
+    # Web Search Configuration
+    # ==========================================================
+    # Tavily API (optional - enhanced web search)
+    TAVILY_API_KEY: Optional[str] = None
+
+    # ==========================================================
     # Embedding Configuration
     # ==========================================================
     # Provider: "local" (HuggingFace) or "openai" (OpenAI API)

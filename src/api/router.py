@@ -6,7 +6,7 @@
 
 from fastapi import APIRouter
 
-from src.api.v1 import chat, documents
+from src.api.v1 import chat, documents, docs, settings
 
 api_router = APIRouter()
 
@@ -26,6 +26,20 @@ api_router.include_router(
     documents.router,
     prefix="/v1/documents",
     tags=["Documents"]
+)
+
+# Docs 도메인: 기술 문서 조회
+api_router.include_router(
+    docs.router,
+    prefix="/v1/docs",
+    tags=["Docs"]
+)
+
+# Settings 도메인: API Key 등 설정 관리
+api_router.include_router(
+    settings.router,
+    prefix="/v1/settings",
+    tags=["Settings"]
 )
 
 # ============================================================
